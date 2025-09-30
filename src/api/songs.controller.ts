@@ -5,6 +5,7 @@ import {
   SongsData,
   CreateSongDTO,
   UpdateSongDTO,
+  ReplaceSongDTO,
 } from "../types/song.types";
 
 const songsData = path.join(__dirname, "..", "..", "songs.json");
@@ -48,7 +49,7 @@ export async function createSong(songData: CreateSongDTO): Promise<Song> {
   return newSong;
 }
 
-// Actualizar canción
+// Actualizar canción - PATCH
 export async function updateSong(
   id: number,
   updates: UpdateSongDTO
@@ -61,6 +62,24 @@ export async function updateSong(
   }
 
   songs[index] = { ...songs[index], ...updates };
+  await writeSongs(songs);
+
+  return songs[index];
+}
+
+// Reemplazar canción - PUT
+export async function replaceSong(
+  id: number,
+  newSongData: ReplaceSongDTO
+): Promise<Song | null> {
+  const songs = await readSongs();
+  const index = songs.findIndex((song) => song.id === id);
+
+  if (index === -1) {
+    return null;
+  }
+
+  songs[index] = { id, ...newSongData };
   await writeSongs(songs);
 
   return songs[index];

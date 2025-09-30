@@ -19,6 +19,8 @@ export interface CreateSongDTO {
   genre: string;
 }
 
+export type ReplaceSongDTO = CreateSongDTO;
+
 export interface UpdateSongDTO {
   title?: string;
   artist?: string;
