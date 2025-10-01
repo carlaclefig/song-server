@@ -1,5 +1,6 @@
 import express from "express";
 import songsRouter from "./api/songs.routes";
+import { staticServer } from "./staticServer";
 
 const app = express();
 const port = 3000;
@@ -7,6 +8,8 @@ const port = 3000;
 app.use(express.json());
 
 app.use("/api", songsRouter);
+
+app.use(staticServer);
 
 app.listen(port, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
