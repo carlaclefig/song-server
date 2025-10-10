@@ -1,6 +1,7 @@
 import express from "express";
-import songsRouter from "./api/songs.routes";
+import songsRouter from "./routes/song.routes";
 import { staticServer } from "./staticServer";
+import { connectDB } from "./db/postgres";
 
 const app = express();
 const port = 3000;
@@ -11,9 +12,9 @@ app.use("/api", songsRouter);
 
 app.use(staticServer);
 
-app.listen(port, () => {
+app.listen(port, async () => {
+  await connectDB();
   console.log(`🚀 Servidor corriendo en http://localhost:${port}`);
   console.log(`📁 Archivos estáticos: http://localhost:${port}/index.html`);
   console.log(`🎶 API: http://localhost:${port}/api/songs`);
-  console.log(`🎵 API canción: http://localhost:${port}/api/song`);
 });
