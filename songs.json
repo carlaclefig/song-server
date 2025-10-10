@@ -34,26 +34,16 @@
     },
     {
       "id": 5,
-      "title": "Old Town Road",
+      "title": "Old Town",
       "artist": "Lil Nas X ft. Billy Ray Cyrus",
       "album": "7",
-      "year": 2019,
+      "year": 2020,
       "genre": "Country Rap"
     },
     {
       "id": 6,
       "title": "Blinding Lights",
       "artist": "The Weeknd",
-      "album": "After Hours",
-      "year": 2019,
-      "genre": "Pop"
-    },
-    {
-      "id": 7,
-      "title": "Happy",
-      "artist": "Pharrell Williams",
-      "album": "G I R L",
-      "year": 2013,
       "genre": "Pop"
     },
     {
@@ -382,6 +372,14 @@
       "artist": "Justin Bieber",
       "album": "Purpose",
       "year": 2015,
+      "genre": "Pop"
+    },
+    {
+      "id": 49,
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "album": "Divide",
+      "year": 2017,
       "genre": "Pop"
     }
   ]
