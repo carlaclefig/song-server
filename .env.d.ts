@@ -1,8 +1,11 @@
-# interface ImportMetaEnv {
-#   readonly DB_PASSWORD: string;
-#   readonly PUBLIC_POKEAPI: string;
-# }
+# export {};
 
-# interface ImportMeta {
-#   readonly env: ImportMetaEnv;
-# }
+# declare global {
+#   namespace NodeJS {
+#     interface ProcessEnv {
+#       DB_HOST?: string;
+#       DB_PORT?: string;
+#       DB_USER?: string;
+#       DB_PASSWORD?: string;
+#       DB_NAME?: string;
+#     }

@@ -1,11 +1,11 @@
 import { Client } from "pg";
 
 export const client = new Client({
-  host: "localhost",
-  user: "", // agregar user
-  password: "", // agregar password
-  database: "music",
-  port: 5432,
+  host: process.env["DB_HOST"],
+  user: process.env["DB_USER"],
+  password: process.env["DB_PASSWORD"],
+  database: process.env["DB_NAME"],
+  port: Number(process.env["DB_PORT"]),
 });
 
 export async function connectDB() {

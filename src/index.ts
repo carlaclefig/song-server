@@ -2,9 +2,12 @@ import express from "express";
 import songsRouter from "./routes/song.routes";
 import { staticServer } from "./staticServer";
 import { connectDB } from "./db/postgres";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
-const port = 3000;
+const port = process.env["DB_PORT"] || 3000;
 
 app.use(express.json());
 
