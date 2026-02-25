@@ -5,4 +5,5 @@ export type Song = {
   album: string;
   year: number;
   genre: string;
+  url?: string;
 };
